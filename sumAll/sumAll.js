@@ -1,12 +1,15 @@
-const sumAll = function(numberOne, numberTwo) {
-    if (numberOne < 0 || numberTwo < 0 ||
-        !Number.isInteger(numberOne) || 
-        !Number.isInteger(numberTwo)) {
+const sumAll = function(min, max) {
+    if (min < 0 || max < 0 ||
+        !Number.isInteger(min) || 
+        !Number.isInteger(max)) {
             return 'ERROR';
         }
 
-    min = Math.min(numberOne, numberTwo);
-    max = Math.max(numberOne, numberTwo);
+    if max < min {
+        temp = min;
+        min = max;
+        max = temp;
+    }
 
     numberAfter = min;
     sum = 0;
